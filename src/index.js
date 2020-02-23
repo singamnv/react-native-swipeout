@@ -137,7 +137,7 @@ const Swipeout = createReactClass({
     };
   },
 
-  UNSAFE_componentWillMount: function () {
+  componentDidMount: function () {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (event, gestureState) => true,
       onStartShouldSetPanResponderCapture: (event, gestureState) =>
@@ -154,7 +154,7 @@ const Swipeout = createReactClass({
     });
   },
 
-  UNSAFE_componentWillReceiveProps: function (nextProps) {
+  componentDidUpdate: function (nextProps) {
     if (nextProps.close) this._close();
     if (nextProps.openRight) this._openRight();
     if (nextProps.openLeft) this._openLeft();
